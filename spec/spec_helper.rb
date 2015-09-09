@@ -7,10 +7,13 @@ require 'rspec'
 def safely_require(file)
   require_relative file
 rescue LoadError
+	puts "Loading #{file} failed"
   # ignore
 end
 
+safely_require '../lib/damageable'
 safely_require '../lib/unit'
 safely_require '../lib/footman'
 safely_require '../lib/barracks'
 safely_require '../lib/peasant'
+safely_require '../lib/seige_engine'
